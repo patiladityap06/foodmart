@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
-export default function NavbarComponent() {
-  // Simulating fetching dropdown data
+import "./Navbar.css";
+import { LuUserRound } from "react-icons/lu";
+import { FaRegHeart } from "react-icons/fa";
+export default function NavbarComponent() 
+{
   const [dropdownItems, setDropdownItems] = useState([]);
 
-  useEffect(() => {
-    // Replace this with a fetch() call if you're getting data from an API
-    const categoryData = [
-      { id: 1, label: 'Groceries' },
-      { id: 2, label: 'Drinks' },
-      { id: 3, label: 'Chocolates' },
-    ];
+  const [selectedCategory, setSelectedCategory] = useState("All Categories");
 
+  useEffect(() => {
+    const categoryData = [
+      { label: "All Categories" },
+      { label: "Groceries" },
+      { label: "Drinks" },
+      { label: "Chocolates" },
+    ];
     setDropdownItems(categoryData);
   }, []);
+
+  const handleSelect = (label) => {
+    setSelectedCategory(label);
+  };
 
   return (
     <>
@@ -22,36 +30,111 @@ export default function NavbarComponent() {
           <a href="#" target="_blank" rel="noopener noreferrer">
             <img src="../images/logo.png" alt="Example Image" />
           </a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse ml-3 " id="navbarSupportedContent">
+          <div className="collapse navbar-collapse ml-3 " id="navbarSupportedContent" >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-              <li className="nav-item dropdown d-flex top-0 start-50 translate-middle-x">
-                <a className="nav-link dropdown-toggle mx-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  All Categories
+              <li
+                className="nav-item dropdown d-flex"
+                style={{
+                  marginLeft: "115px",
+                  backgroundColor: "#ececec59",
+                  borderRadius: "15px",
+                  border: "none",
+                  padding: 5,
+                }}
+              >
+                <a
+                  className="nav-link dropdown-toggle mx-4 add"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false" style={{color: "gray",border:"none !important"}}
+                >
+                  {selectedCategory}
                 </a>
+
                 <ul className="dropdown-menu">
-                  {dropdownItems.map((item) =>
-                    item.label === 'divider' ? (
-                      <li key={item.id}><hr className="dropdown-divider" /></li>
-                    ) : (
-                      <li key={item.id}>
-                        <a className="dropdown-item" href="#">{item.label}</a>
-                      </li>
-                    )
-                  )}
+                  {dropdownItems.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={() => handleSelect(item.label)}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
-                <form className="d-flex" role="search">
-              <input className="form-control w100" type="search" style={{ width: '300px' }} placeholder="Search for more than 20,000 products" aria-label="Search" />
-                  <button type="button" class="btn btn-light"><CiSearch /></button>
-            </form>
+                <div className="input-group" style={{ width: "330px" }}>
+                  <input
+                    className="form-control"
+                    style={{ backgroundColor: "transparent", border: "none" }}
+                    type="search"
+                    placeholder="Search for more than 20,000 products"
+                    aria-label="Search"
+                  />
+                </div>
+                <CiSearch
+                  style={{
+                    alignItems: "center",
+                    marginLeft: "10px",
+                    top: "25%",
+                    pointerEvents: "none",
+                    color: "#888",
+                    paddingRight: "5",
+                  }}
+                  size={35}
+                />
               </li>
-              
             </ul>
+            <div
+              className="d-flex align-items-center justify-content-between"
+              style={{ display: "flex", alignItems: "center", gap: "30px" }}
+            >
+              <div className="support" style={{ marginRight: "20px" }}>
+                <p>For Support?</p>
+                <h4>+980-34984089</h4>
+              </div>
+              <div
+                className="d-flex align-items-center"
+                style={{ gap: "30px", marginRight: "30px" }}
+              >
+                <LuUserRound size={24} />
+                <FaRegHeart size={24} />
+                <div className="dropdown">
+                  <button
+                    className="btn dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style={{ backgroundColor: "transparent", border: "none" }}
+                  >
+                    Your Cart
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                    style={{ backgroundColor: "transparent", border: "none" }}
+                  ></ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
+      <hr style={{ color: "lightgray" }} />
     </>
   );
 }

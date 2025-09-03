@@ -1,0 +1,394 @@
+.carousel
+{
+    height: 673px;
+    width: 800px;
+    background-color:rgb(213, 231, 237);
+   place-items: end;
+   border-radius: 3%;
+   
+}
+.cardss
+{
+    height: 315px;
+    width:600px;
+    background-color: rgb(206, 223, 189);
+    border-radius: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.main
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 55px;
+    column-gap: 1px;
+ 
+}
+.abs
+{
+     height: 315px;
+    width:600px;
+    background-color:rgb(228, 207, 198);
+    border-radius: 3%;
+    place-items: end;
+}
+.main2
+{
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+/* .w-50 {
+   width: 80% !important;
+}  */
+.carousel-item.active {
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   top:50px;
+   height: 535px;
+}
+.carouselExampleIndicators
+{
+    align-items: center;
+}
+.content
+{
+   
+   height: 100%;
+   text-align: left;
+    font-weight: normal;
+   color: #FBC550;
+   font-family: 'Playfair Display', serif;
+   margin-bottom: 45px;
+}
+.w-100
+{
+   position: relative;
+    top: 22px;
+    width: 109% !important;
+    margin-right: 1px;
+    border-radius: 10px;
+}
+.w-200
+{
+    position: relative;
+    margin-top: 46px;
+    width: 105% !important;
+    bottom: 4px;
+}
+.font
+{
+    color: black;
+    font-weight: bold;
+    font-family: 'Baloo 2', cursive;
+    font-size: 30px;
+    width: 55%;
+    text-align: left;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: clip;
+    line-height: 1;
+    margin-left: 50px;
+}
+.submain
+{
+    display: flex;
+    
+}
+.subheading
+{
+    width:50%;
+    text-align: left;
+    font-family: Georgia;
+    font-size: 30px;
+    padding-left: 54px;
+}
+.img
+{
+    width:50%;
+    place-items:end;
+
+}
+.subheading span
+{
+    font-size: 15px;
+    font-weight: lighter;
+   
+}
+.subheading a
+{
+    font-size: 10px;
+    text-align: center;
+    gap:1px;
+}
+.subheading p
+{
+    margin-bottom: 0rem;
+}
+.font span
+{
+    font-size: 15px;
+    font-weight: lighter;
+    color: grey;
+}
+.Bottle
+{
+    width:80%;
+}
+#title
+{
+    font-size: 50px;
+}
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Makes it fully rounded */
+    background-color: yellow; /* Yellow color */
+    border: none; /* Remove border if needed */
+    opacity: 0.7; /* Optional: semi-transparent for inactive dots */
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-indicators .active {
+    opacity: 1; /* Fully visible when active */
+  }
+  /* Extra small devices (phones, 0px to 576px) */
+@media (max-width: 576px) {
+  .carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardss,
+  .abs {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .main {
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .main2 {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .font {
+    font-size: 18px;
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .submain {
+    flex-direction: column;
+  }
+
+  .subheading,
+  .img {
+    width: 100%;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .subheading {
+    font-size: 20px;
+  }
+
+  .w-100,
+  .w-200 {
+    width: 100% !important;
+    margin: 0 auto;
+    top: 0;
+  }
+
+  .Bottle {
+    width: 100%;
+  }
+
+  .carousel-item.active {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #title {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+/* Small devices (tablets, 577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .carousel {
+    width: 100%;
+    height: auto;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardss,
+  .abs {
+    width: 100%;
+    height: auto;
+  }
+
+  .main {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .main2 {
+    gap: 25px;
+  }
+
+  .font {
+    font-size: 22px;
+    width: 90%;
+    margin-left: 20px;
+  }
+
+  .submain {
+    flex-direction: column;
+  }
+
+  .subheading,
+  .img {
+    width: 100%;
+    padding-left: 25px;
+  }
+
+  .subheading {
+    font-size: 24px;
+  }
+
+  .w-100,
+  .w-200 {
+    width: 100% !important;
+  }
+
+  .Bottle {
+    width: 100%;
+  }
+
+  .carousel-item.active {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #title {
+    font-size: 34px;
+  }
+}
+
+/* Medium devices (laptops, 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .carousel {
+    width: 95%;
+    height: auto;
+    border-radius: 3%;
+  }
+
+  .cardss,
+  .abs {
+    width: 80%;
+    height: auto;
+  }
+
+  .main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .font {
+    font-size: 26px;
+    width: 80%;
+    margin-left: 30px;
+  }
+
+  .subheading {
+    font-size: 26px;
+  }
+
+  #title {
+    font-size: 40px;
+  }
+
+  .w-100,
+  .w-200 {
+    width: 100% !important;
+  }
+
+  .carousel-item.active {
+    height: auto;
+  }
+}
+
+/* Large devices (desktops and up, 1025px+) */
+@media (min-width: 1025px) {
+  .carousel {
+    width: 800px;
+    height: 673px;
+    border-radius: 3%;
+  }
+
+  .cardss,
+  .abs {
+    width: 600px;
+    height: 315px;
+  }
+
+  .main {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 55px;
+  }
+
+  .font {
+    font-size: 30px;
+    width: 55%;
+    margin-left: 50px;
+  }
+
+  .submain {
+    flex-direction: row;
+  }
+
+  .subheading,
+  .img {
+    width: 50%;
+  }
+
+  .subheading {
+    font-size: 30px;
+  }
+
+  #title {
+    font-size: 50px;
+  }
+
+  .carousel-item.active {
+    flex-direction: row;
+    height: 535px;
+  }
+}
