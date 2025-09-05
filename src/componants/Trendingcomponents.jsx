@@ -1,10 +1,13 @@
+// src/componants/Trendingcomponents.jsx
 import React, { useState } from "react";
 import "./Trendingcomponent.css";
-import { FaStar } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import { FaStar, FaRegHeart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addToCart } from "./Cartslice";
 
 export default function Trendingcomponents() {
-  // JSON array with multiple products
+  const dispatch = useDispatch();
+
   const productsData = [
     {
       id: 1,
@@ -14,6 +17,7 @@ export default function Trendingcomponents() {
       price: 18.0,
       image: "./thumb-bananas.png",
       discount: "30%",
+      category: "Fruits & Veges",
     },
     {
       id: 2,
@@ -23,6 +27,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-biscuits.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
     {
       id: 3,
@@ -32,6 +37,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-cucumber.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
     {
       id: 4,
@@ -41,6 +47,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-milk.png",
       discount: "20%",
+      category: "Juices",
     },
     {
       id: 5,
@@ -50,6 +57,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-bananas.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
     {
       id: 6,
@@ -59,6 +67,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-cucumber.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
     {
       id: 7,
@@ -68,6 +77,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-milk.png",
       discount: "20%",
+      category: "Juices",
     },
     {
       id: 8,
@@ -77,6 +87,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-bananas.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
     {
       id: 9,
@@ -86,6 +97,7 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-biscuits.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
     {
       id: 10,
@@ -95,15 +107,18 @@ export default function Trendingcomponents() {
       price: 12.5,
       image: "./thumb-biscuits.png",
       discount: "20%",
+      category: "Fruits & Veges",
     },
   ];
 
   const [itemCounts, setItemCounts] = useState(
     productsData.reduce((acc, product) => {
-      acc[product.id] = 1;
+      acc[product.id] = 0;
       return acc;
     }, {})
   );
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const handleIncrement = (id) => {
     setItemCounts((prev) => ({ ...prev, [id]: prev[id] + 1 }));
@@ -112,9 +127,14 @@ export default function Trendingcomponents() {
   const handleDecrement = (id) => {
     setItemCounts((prev) => ({
       ...prev,
-      [id]: Math.max(1, prev[id] - 1),
+      [id]: Math.max(0, prev[id] - 1),
     }));
   };
+
+  const filteredProducts =
+    selectedCategory === "All"
+      ? productsData
+      : productsData.filter((product) => product.category === selectedCategory);
 
   return (
     <>
@@ -123,42 +143,55 @@ export default function Trendingcomponents() {
         <ul className="nav justify-content-end">
           <li className="nav-item">
             <a
-              className="nav-link active"
-              aria-current="page"
+              className="nav-link"
               href="#"
               style={{ color: "grey" }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedCategory("All");
+              }}
             >
               ALL
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#" style={{ color: "grey" }}>
+            <a
+              className="nav-link"
+              href="#"
+              style={{ color: "grey" }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedCategory("Fruits & Veges");
+              }}
+            >
               FRUITS & VEGES
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#" style={{ color: "grey" }}>
+            <a
+              className="nav-link"
+              href="#"
+              style={{ color: "grey" }}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedCategory("Juices");
+              }}
+            >
               JUICES
             </a>
           </li>
         </ul>
       </div>
 
-      {/* Render all product cards */}
       <div className="trndcard">
-        {productsData.map((product) => (
+        {filteredProducts.map((product) => (
           <div
             key={product.id}
             className="card rounded-4 shadow border-0 mb-3"
             style={{ width: "18rem" }}
           >
             <div className="parent">
-              <img
-                src={product.image}
-               
-                alt={product.title}
-              />
-
+              <img src={product.image} alt={product.title} />
               <div className="discount">
                 <span>-{product.discount}</span>
               </div>
@@ -169,11 +202,11 @@ export default function Trendingcomponents() {
 
             <div className="card-body">
               <h5 className="card-title">{product.title}</h5>
-              <p className="list-group-item">
+              <p>
                 {product.unit} <FaStar style={{ color: "gold" }} />{" "}
                 <span>{product.rating}</span>
               </p>
-              <p className="list-group-item">${product.price.toFixed(2)}</p>
+              <p>${product.price.toFixed(2)}</p>
 
               <div className="addtocart">
                 <button
@@ -190,11 +223,9 @@ export default function Trendingcomponents() {
                 >
                   -
                 </button>
-
                 <span style={{ margin: "0 12px" }}>
                   {itemCounts[product.id]}
                 </span>
-
                 <button
                   onClick={() => handleIncrement(product.id)}
                   style={{
@@ -215,11 +246,12 @@ export default function Trendingcomponents() {
                     background: "none",
                     border: "none",
                     color: "grey",
-                    padding: 0,
+                    marginLeft: "20px",
                     cursor: "pointer",
-                    fontSize: "1rem",
-                    marginLeft: "70px",
                   }}
+                  onClick={() =>
+                    dispatch(addToCart({ product, count: itemCounts[product.id] }))
+                  }
                 >
                   Add to Cart
                 </button>
@@ -228,6 +260,7 @@ export default function Trendingcomponents() {
           </div>
         ))}
       </div>
+      
     </>
   );
 }

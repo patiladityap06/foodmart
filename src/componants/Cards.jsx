@@ -1,42 +1,39 @@
 import React from 'react'
-
+import "./Cards.css";
 export default function Cards() {
   return (
-    <div className="crds">
-    <div class="row" style={{marginTop:"160px"}}>
-  <div class="col-sm-6 mb-3">
-    <div class="card h-100">
-      <div class="card-body d-flex justify-content-between align-items-center" style={{backgroundColor:" #f9e8e1"}}>
-       
-        <div class="flex-grow-1">
-          <h5 class="card-title">Upto 25% Off</h5>
-          <p class="card-text">Luxa Dark Chocolate.</p>
-          <p class="card-text">Very tasty & creamy vanilla flavour creamy muffin</p>
-          <a href="#" class="btn btn-primary">Shop Now</a>
-        </div>
-        
-        <img src="./ad-image-3.png" alt="Card Image" class="ms-3" style={{width: "315px", height: "auto"}}/>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 mb-3">
-    <div class="card h-100">
-      <div class="card-body d-flex justify-content-between align-items-center">
-       
-        <div class="flex-grow-1">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        
-        <img src="https://via.placeholder.com/100" alt="Card Image" class="ms-3" style={{width: "100px", height: "auto"}}/>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    </div>
+              <div className="crds-main">
+                <div className="subcrds">
+                  <div className="subhead">
+                    <h4>
+                      Upto 25% Off
+                      <br />
+                    </h4>
+                    <h2>Luxa Dark Chocolate</h2>
+                    <p>Very tasty & creamy vanilla flavour creamy muffins.</p>
+                    <button type="button" class="btn btn-secondary">SHOP NOW </button>
+                  </div>
+                  <div className="im">
+                    <img src="ad-image-3.png"  alt="..." />
+                  </div>
+                </div>
+    
+                <div className="crds-main2">
+                  <div className="subcrds2" >
+                    <div className="subhead2">
+                      <h4>
+                      Upto 25% Off
+                      <br />
+                    </h4>
+                    <h2>Creamy Muffins</h2>
+                    <p>Very tasty & creamy vanilla flavour creamy muffins.</p>
+                    <button type="button" class="btn btn-secondary">SHOP NOW </button>
+                    </div>
+                    <div className="im2">
+                      <img src="./ad-image-4.png"  alt="..." />
+                    </div>
+                  </div>
+                </div>
+              </div>
   )
 }

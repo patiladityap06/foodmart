@@ -1,8 +1,6 @@
 import React from "react";
 import "./Home.css";
-
 import { FaArrowRight } from "react-icons/fa";
-
 export default function HomeComponent() {
   return (
     <>
@@ -172,13 +170,13 @@ export default function HomeComponent() {
         </div>
         <div className="main">
           <div className="carousel">
-            <div id="carouselExampleIndicators" class="carousel slide">
-              <div class="carousel-indicators">
+            <div id="carouselExampleIndicators" className="carousel slide">
+              <div className="carousel-indicators">
                 <button
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide-to="0"
-                  class="active"
+                  className="active"
                   aria-current="true"
                   aria-label="Slide 1"
                 ></button>
@@ -195,7 +193,7 @@ export default function HomeComponent() {
                   aria-label="Slide 3"
                 ></button>
               </div>
-              <div class="carousel-inner">
+              <div className="carousel-inner">
 
                 <div class="carousel-item active">
                   <div className="font">
@@ -208,10 +206,10 @@ export default function HomeComponent() {
                       Aspernatur asperiores, placeat necessitatibus aliquid.
                     </span>
                     <br />
-                    <p class=" gap">
+                    <p className=" gap">
                       <button
                         type="button"
-                        class="btn active"
+                        className="btn active"
                         data-bs-toggle="button"
                         aria-pressed="true"
                         style={{ width: "155px", height: "58px",marginTop: "40px"}}
@@ -224,12 +222,12 @@ export default function HomeComponent() {
                   <div>
                     <img className="Bottle"
                       src="./product-thumb-1.png"
-                      // class="d-block w-51"
+                     
                       alt="..."
                     />
                   </div>
                 </div>
-                <div class="carousel-item ">
+                <div className="carousel-item ">
                   <div className="font">
                     <p className="content">100% Natural</p>
                     <p id="title">
@@ -240,10 +238,10 @@ export default function HomeComponent() {
                       Aspernatur asperiores, placeat necessitatibus aliquid.
                     </span>
                     <br />
-                    <p class=" gap">
+                    <p className=" gap">
                       <button
                         type="button"
-                        class="btn active"
+                        className="btn active"
                         data-bs-toggle="button"
                         aria-pressed="true"
                         style={{ width: "155px", height: "58px", marginTop: "40px"}}
@@ -260,7 +258,7 @@ export default function HomeComponent() {
                     />
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                   <div className="font">
                     <p className="content">100% Natural</p>
                     <p id="title">
@@ -271,10 +269,10 @@ export default function HomeComponent() {
                       Aspernatur asperiores, placeat necessitatibus aliquid.
                     </span>
                     <br />
-                    <p class=" gap">
+                    <p className=" gap">
                       <button
                         type="button"
-                        class="btn active"
+                        className="btn active"
                         data-bs-toggle="button"
                         aria-pressed="true"
                         style={{ width: "155px", height: "58px" , marginTop: "40px"}}
@@ -295,7 +293,6 @@ export default function HomeComponent() {
               </div>
             </div>
           </div>
-
           <div className="main2">
             <div className="cardss">
               <div className="subheading">
@@ -314,7 +311,7 @@ export default function HomeComponent() {
                 </a>
               </div>
               <div className="img">
-                <img src="./ad-image-1.png" class="d-block w-100" alt="..." />
+                <img src="./ad-image-1.png" className="d-block w-100" alt="..." />
               </div>
             </div>
 
@@ -332,14 +329,13 @@ export default function HomeComponent() {
                   </a>
                 </div>
                 <div className="img">
-                  <img src="./ad-image-2.png" class="d-block w-200" alt="..." />
+                  <img src="./ad-image-2.png" className="d-block w-200" alt="..." />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    
     </>
   );
 }
