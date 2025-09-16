@@ -195,7 +195,7 @@ export default function HomeComponent() {
               </div>
               <div className="carousel-inner">
 
-                <div class="carousel-item active">
+                <div className="carousel-item active">
                   <div className="font">
                     <p className="content">100% Natural</p>
                     <p id="title">

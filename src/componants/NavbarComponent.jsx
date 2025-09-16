@@ -23,7 +23,7 @@ export default function NavbarComponent() {
           </a>
           <div className="collapse navbar-collapse ml-3">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item d-flex">
+              <li className="nav-item d-flex" style={{position:"relative",left:"223px" }}>
                 <div className="input-group" style={{ width: "330px" }}>
                   <input
                     className="form-control"

@@ -1,0 +1,22 @@
+.MAIN
+{
+    display: flex;
+    background-image: url("D:\node_js_projects\foodmart\public\vegetable-and-fruit-food-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    align-items: center;
+}
+.SUBMAIN
+{
+    width:50%;
+}
+.SUBMAIN2
+{
+    width: 50%;
+    place-items: center;
+}
+.SUBMAIN2 form
+{
+    display: grid;
+}

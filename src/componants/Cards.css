@@ -22,9 +22,9 @@
     display: flex;
     gap: 37px;
     position: relative;
-    top: 100px;
     justify-content: space-around;
-    overflow:clip;
+    overflow: clip;
+    margin-top: 89px;
 }
 
 .im
